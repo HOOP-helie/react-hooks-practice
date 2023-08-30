@@ -2,12 +2,14 @@ import { useState } from 'react';
 
 import Section from '../UI/Section';
 import TaskForm from './TaskForm';
+import useAPI from './../../components/hooks/use-api';
 
 const NewTask = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const enterTaskHandler = async (taskText) => {
+  useApi()
+  const enterTaskHandler =  (taskText) => {
     setIsLoading(true);
     setError(null);
     try {
